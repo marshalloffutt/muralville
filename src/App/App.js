@@ -1,22 +1,18 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'reactstrap';
+import connection from '../helpers/data/connection';
+import Auth from '../components/Auth/Auth';
 import './App.scss';
 
 class App extends React.Component {
+  componentDidMount() {
+    connection();
+  }
+
   render() {
     return (
-      <div className="App">
-        <button className='btn btn-danger'>Bootstrap test</button>
-        <Button
-            tag="a"
-            color="success"
-            size="large"
-            href="http://reactstrap.github.io"
-            target="_blank"
-        >
-            View Reactstrap Docs
-        </Button>
+      <div className="Auth">
+        <Auth />
       </div>
     );
   }
