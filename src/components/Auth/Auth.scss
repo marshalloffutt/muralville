@@ -1,6 +1,18 @@
 @import '../../styles/variables';
 
-.login-btn {
-  max-width: 200px;
-  cursor: pointer;
-} 
+.loginBtn {
+  margin:20px auto;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  box-shadow:0 1px 2px #5e5d5b;
+  text-align: center;
+  line-height: 45px;
+}
+
+.btnIcon {
+  vertical-align: middle;
+}
+
+.btnText {
+  font-size: 1.1em;
+}
