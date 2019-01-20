@@ -1,0 +1,13 @@
+.Home {
+  width: 100%;
+}
+
+.header-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
