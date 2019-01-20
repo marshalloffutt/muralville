@@ -1,3 +1,19 @@
+@import '../../styles/variables';
+
+.my-navbar {
+  background-color: $background !important;
+    img {
+      max-height: 110px;
+      max-width: 110px;
+    }
+}
+
 .nav-link {
   cursor: pointer;
-} 
+  color: $brand !important;
+  font-size: 1.3em;
+}
+
+.nav-link:hover {
+  color: $logout !important;
+}

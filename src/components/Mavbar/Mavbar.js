@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import logo from '../../images/brand.png';
 import './Mavbar.scss';
 
 class Mavbar extends React.Component {
@@ -31,8 +32,10 @@ class Mavbar extends React.Component {
     const { isAuthed, logoutClicky } = this.props;
     return (
       <div className="mavbar">
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Muralville</NavbarBrand>
+        <Navbar className="my-navbar" color="light" light expand="md">
+          <NavbarBrand href="/">
+            <img src={logo} alt="muralville logo" />
+          </NavbarBrand>
           <NavbarToggler onClick={e => this.toggle(e)} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
