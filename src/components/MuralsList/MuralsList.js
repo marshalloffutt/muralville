@@ -7,24 +7,19 @@ import './MuralsList.scss';
 class MuralsList extends React.Component {
   static propTypes = {
     murals: PropTypes.arrayOf(muralShape),
-  }
-
-  state = {
-    view: 'all',
-  }
-
-  initializeSingleCardView = (muralId) => {
-    // this.setState.view = muralId;
-    console.log(muralId);
+    initializeSingleCardView: PropTypes.func,
   }
 
   render() {
-    const { murals } = this.props;
+    const {
+      murals,
+      initializeSingleCardView,
+    } = this.props;
     const muralsItemComponents = murals.map(mural => (
         <MuralCard
           mural={mural}
           key={mural.id}
-          initializeSingleCardView={this.initializeSingleCardView}
+          initializeSingleCardView={initializeSingleCardView}
         />
     ));
     return (

@@ -17,7 +17,6 @@ class MuralCard extends React.Component {
     e.preventDefault();
     const muralId = e.target.closest('.mural').id;
     const { initializeSingleCardView } = this.props;
-    // console.log(muralId);
     initializeSingleCardView(muralId);
   }
 
