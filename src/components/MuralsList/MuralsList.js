@@ -18,7 +18,7 @@ class MuralsList extends React.Component {
         />
     ));
     return (
-      <div className='MuralsList flex-wrap d-flex flex-row'>
+      <div className='MuralsList flex-wrap d-flex justify-content-center flex-row p-1'>
         {muralsItemComponents}
       </div>
     );
