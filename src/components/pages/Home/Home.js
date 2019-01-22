@@ -1,5 +1,6 @@
 import React from 'react';
 
+// import authRequests from '../../../helpers/data/authRequests';
 import muralRequests from '../../../helpers/data/muralRequests';
 
 import Header from '../../Header/Header';
@@ -14,6 +15,10 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    this.getAndDisplayMurals();
+  }
+
+  getAndDisplayMurals = () => {
     muralRequests.getMurals()
       .then((murals) => {
         this.setState({ murals });
@@ -28,7 +33,7 @@ class Home extends React.Component {
           <Header />
         </div>
         <div className='content-wrapper'>
-          <MuralsList />
+          <MuralsList murals={this.state.murals}/>
           <MuralsMap />
         </div>
       </div>
