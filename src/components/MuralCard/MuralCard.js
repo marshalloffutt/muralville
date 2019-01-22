@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Card, CardImg, CardBody,
 } from 'reactstrap';
@@ -9,12 +10,20 @@ import tempMural from '../../images/temp_mural.png';
 class MuralCard extends React.Component {
   static propTypes = {
     mural: muralShape,
+    initializeSingleCardView: PropTypes.func,
+  }
+
+  clickedCard = (e) => {
+    e.preventDefault();
+    const muralId = e.target.closest('.mural').id;
+    const { initializeSingleCardView } = this.props;
+    initializeSingleCardView(muralId);
   }
 
   render() {
     const { mural } = this.props;
     return (
-      <div className="col-5 m-2">
+      <div id={mural.id} className="col-5 m-2 mural" onClick={this.clickedCard}>
         <Card className="mural-item">
           <CardImg top width="100%" height="50%" src={tempMural} alt={mural.title} />
           <CardBody>

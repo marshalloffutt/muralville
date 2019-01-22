@@ -6,12 +6,14 @@ import muralRequests from '../../../helpers/data/muralRequests';
 import Header from '../../Header/Header';
 import MuralsList from '../../MuralsList/MuralsList';
 import MuralsMap from '../../MuralsMap/MuralsMap';
+import MuralView from '../../MuralView/MuralView';
 
 import './Home.scss';
 
 class Home extends React.Component {
   state = {
     murals: [],
+    selected: '',
   }
 
   componentDidMount() {
@@ -26,14 +28,28 @@ class Home extends React.Component {
       .catch(err => console.error('error with murals GET', err));
   }
 
+  initializeSingleCardView = (muralId) => {
+    const selected = muralId;
+    this.setState({ selected });
+  }
+
   render() {
+    const viewCheck = () => {
+      if (this.state.selected !== '') {
+        return <MuralView selected={this.state.selected}/>;
+      } return <MuralsList
+          murals={this.state.murals}
+          initializeSingleCardView={this.initializeSingleCardView}
+        />;
+    };
+
     return (
       <div className='Home'>
         <div className='header-wrapper'>
           <Header />
         </div>
         <div className='content-wrapper'>
-          <MuralsList murals={this.state.murals}/>
+          {viewCheck()}
           <MuralsMap />
         </div>
       </div>
