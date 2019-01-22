@@ -13,12 +13,18 @@ class MuralsList extends React.Component {
     view: 'all',
   }
 
+  initializeSingleCardView = (muralId) => {
+    // this.setState.view = muralId;
+    console.log(muralId);
+  }
+
   render() {
     const { murals } = this.props;
     const muralsItemComponents = murals.map(mural => (
         <MuralCard
           mural={mural}
           key={mural.id}
+          initializeSingleCardView={this.initializeSingleCardView}
         />
     ));
     return (
