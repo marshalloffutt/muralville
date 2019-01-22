@@ -9,6 +9,10 @@ class MuralsList extends React.Component {
     murals: PropTypes.arrayOf(muralShape),
   }
 
+  state = {
+    view: 'all',
+  }
+
   render() {
     const { murals } = this.props;
     const muralsItemComponents = murals.map(mural => (
