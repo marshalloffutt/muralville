@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import muralShape from '../../helpers/props/muralShape';
 import './MuralCard.scss';
-import tempMural from '../../images/temp_mural.png';
+// import tempMural from '../../images/temp_mural.png';
 
 class MuralCard extends React.Component {
   static propTypes = {
@@ -25,7 +25,7 @@ class MuralCard extends React.Component {
     return (
       <div id={mural.id} className="col-5 m-2 mural" onClick={this.clickedCard}>
         <Card className="mural-item">
-          <CardImg top width="100%" height="50%" src={tempMural} alt={mural.title} />
+          <CardImg top width="100%" height="50%" src={mural.image} alt={mural.title} />
           <CardBody>
             <h3>{mural.title}</h3>
           </CardBody>
