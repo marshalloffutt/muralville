@@ -33,9 +33,17 @@ class Home extends React.Component {
     this.setState({ selected });
   }
 
+  deleteMural = (muralId) => {
+    muralRequests.deleteMuralAxios(muralId)
+      .then(() => {
+        this.getAndDisplayMurals();
+        this.setState({ selected: '' });
+      })
+      .catch(err => console.error('error in deleting mural', err));
+  }
+
   goToHome = () => {
-    const selected = '';
-    this.setState({ selected });
+    this.setState({ selected: '' });
   }
 
   render() {
@@ -45,6 +53,7 @@ class Home extends React.Component {
                   selected={this.state.selected}
                   murals={this.state.murals}
                   goToHome={this.goToHome}
+                  deleteMural={this.deleteMural}
                 />;
       } return <MuralsList
           murals={this.state.murals}

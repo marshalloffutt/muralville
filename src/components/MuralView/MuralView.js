@@ -6,7 +6,15 @@ import './MuralView.scss';
 class MuralView extends React.Component {
   static propTypes = {
     goToHome: PropTypes.func,
+    deleteMural: PropTypes.func,
   };
+
+  deleteEvent = (e) => {
+    e.preventDefault();
+    const muralId = this.props.selected;
+    const { deleteMural } = this.props;
+    deleteMural(muralId);
+  }
 
   goBack = (e) => {
     e.preventDefault();
@@ -29,7 +37,7 @@ class MuralView extends React.Component {
         return (
           <div className="container p-3">
             <button className="btn btn-warning m-2">Edit</button>
-            <button className="btn btn-danger m-2">Delete</button>
+            <button className="btn btn-danger m-2" onClick={this.deleteEvent}>Delete</button>
             <button className="btn btn-primary m-2" onClick={this.goBack}>Back to List</button>
           </div>
         );
