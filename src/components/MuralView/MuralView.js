@@ -1,8 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import './MuralView.scss';
 
 class MuralView extends React.Component {
+  static propTypes = {
+    goToHome: PropTypes.func,
+  };
+
+  goBack = (e) => {
+    e.preventDefault();
+    const { goToHome } = this.props;
+    goToHome();
+  };
+
   render() {
     const uid = authRequests.getCurrentUid();
 
@@ -19,10 +30,10 @@ class MuralView extends React.Component {
           <div className="container p-3">
             <button className="btn btn-warning m-2">Edit</button>
             <button className="btn btn-danger m-2">Delete</button>
-            <button className="btn btn-primary m-2">Back to List</button>
+            <button className="btn btn-primary m-2" onClick={this.goBack}>Back to List</button>
           </div>
         );
-      } return <button className="btn btn-primary m-2">Back to List</button>;
+      } return <button className="btn btn-primary m-2" onClick={this.goBack}>Back to List</button>;
     };
 
     return (

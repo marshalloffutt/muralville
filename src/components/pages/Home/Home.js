@@ -33,10 +33,19 @@ class Home extends React.Component {
     this.setState({ selected });
   }
 
+  goToHome = () => {
+    const selected = '';
+    this.setState({ selected });
+  }
+
   render() {
     const viewCheck = () => {
       if (this.state.selected !== '') {
-        return <MuralView selected={this.state.selected} murals={this.state.murals}/>;
+        return <MuralView
+                  selected={this.state.selected}
+                  murals={this.state.murals}
+                  goToHome={this.goToHome}
+                />;
       } return <MuralsList
           murals={this.state.murals}
           initializeSingleCardView={this.initializeSingleCardView}
