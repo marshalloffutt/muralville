@@ -19,7 +19,10 @@ const getMurals = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const deleteMuralAxios = muralId => axios.delete(`${firebaseUrl}/murals/${muralId}.json`);
+
 export default {
   getMurals,
   firebaseUrl,
+  deleteMuralAxios,
 };
