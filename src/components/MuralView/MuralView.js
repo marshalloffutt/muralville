@@ -1,16 +1,30 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import authRequests from '../../helpers/data/authRequests';
 import './MuralView.scss';
 
 class MuralView extends React.Component {
   render() {
-    const selectedMural = this.props.selected;
+    const uid = authRequests.getCurrentUid();
+
     const mural = this.props.murals
-      .find((thing) => {
-        if (thing.id === selectedMural) {
-          return thing;
+      .find((match) => {
+        if (match.id === this.props.selected) {
+          return match;
         } return '';
       });
+
+    const makeButtons = () => {
+      if (mural.uid === uid) {
+        return (
+          <div className="container p-3">
+            <button className="btn btn-warning m-2">Edit</button>
+            <button className="btn btn-danger m-2">Delete</button>
+            <button className="btn btn-primary m-2">Back to List</button>
+          </div>
+        );
+      } return <button className="btn btn-primary m-2">Back to List</button>;
+    };
+
     return (
       <div className='MuralView container'>
         <div className="container py-3">
@@ -28,15 +42,7 @@ class MuralView extends React.Component {
                     <h2 className="card-title">{mural.title}</h2>
                     <h5 className="card-text">{mural.artist}</h5>
                     <h5 className="card-text">{mural.address}</h5>
-                    <Button
-                      tag="a"
-                      color="success"
-                      size="large"
-                      href="http://reactstrap.github.io"
-                      target="_blank"
-                    >
-                      Back to list
-                    </Button>
+                    {makeButtons()}
                   </div>
               </div>
             </div>
