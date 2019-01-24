@@ -1,5 +1,10 @@
 @import '../../styles/variables';
 
-.Header {
-  border: 1px solid red;
+.add-mural-button {
+  background-color: $blue-lighter;
+  border-color: $teal;
+
+    &:hover {
+      background-color: $teal;
+  }
 }

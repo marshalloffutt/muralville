@@ -71,8 +71,8 @@ class App extends React.Component {
               <div className="row">
                 <Switch>
                   <PrivateRoute path='/' exact component={Home} authed={this.state.authed} />
-                  <PrivateRoute path='/home' component={Home} authed={this.state.authed} />
-                  <PublicRoute path='/auth' component={Auth} authed={this.state.authed} />
+                  <PrivateRoute exact path='/home' component={Home} authed={this.state.authed} />
+                  <PublicRoute exact path='/auth' component={Auth} authed={this.state.authed} />
                 </Switch>
               </div>
           </React.Fragment>
