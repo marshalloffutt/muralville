@@ -39,6 +39,12 @@ class ModalExample extends React.Component {
 
   titleChange = e => this.formFieldStringState('title', e);
 
+  addressChange = e => this.formFieldStringState('address', e);
+
+  artistChange = e => this.formFieldStringState('artist', e);
+
+  imageChange = e => this.formFieldStringState('address', e);
+
   render() {
     const { newMural } = this.state;
     return (
@@ -58,6 +64,42 @@ class ModalExample extends React.Component {
                   placeholder="Mural Title"
                   value={newMural.title}
                   onChange={this.titleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="address">Address:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="address"
+                  aria-describedby="addressHelp"
+                  placeholder="500 Interstate Blvd, Nashville, TN"
+                  value={newMural.address}
+                  onChange={this.addressChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="artist">Artist:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="artist"
+                  aria-describedby="artistHelp"
+                  placeholder="Picasso"
+                  value={newMural.artist}
+                  onChange={this.artistChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="image">Image Url:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="image"
+                  aria-describedby="imageHelp"
+                  placeholder="https://github.com/marshalloffutt/muralville/blob/master/src/images/temp_mural.png"
+                  value={newMural.image}
+                  onChange={this.imageChange}
                 />
               </div>
               <button className="btn btn-danger">Save Listing</button>
