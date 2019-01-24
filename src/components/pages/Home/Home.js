@@ -46,6 +46,17 @@ class Home extends React.Component {
     this.setState({ selected: '' });
   }
 
+  formSubmitEvent = (newMural) => {
+    muralRequests.addMuralAxios(newMural)
+      .then(() => {
+        muralRequests.getMurals()
+          .then((murals) => {
+            this.setState({ murals });
+          });
+      })
+      .catch(err => console.error('error with murals post', err));
+  }
+
   render() {
     const viewCheck = () => {
       if (this.state.selected !== '') {
@@ -64,7 +75,9 @@ class Home extends React.Component {
     return (
       <div className='Home'>
         <div className='header-wrapper'>
-          <Header />
+          <Header
+            onSubmit={this.formSubmitEvent}
+          />
         </div>
         <div className='content-wrapper'>
           {viewCheck()}

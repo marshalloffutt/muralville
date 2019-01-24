@@ -21,11 +21,11 @@ const getMurals = () => new Promise((resolve, reject) => {
 
 const deleteMuralAxios = muralId => axios.delete(`${firebaseUrl}/murals/${muralId}.json`);
 
-const addMural = newMural => axios.post(`${firebaseUrl}/murals.json`, newMural);
+const addMuralAxios = newMural => axios.post(`${firebaseUrl}/murals.json`, newMural);
 
 export default {
   getMurals,
   firebaseUrl,
   deleteMuralAxios,
-  addMural,
+  addMuralAxios,
 };

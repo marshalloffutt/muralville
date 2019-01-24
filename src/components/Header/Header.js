@@ -8,6 +8,7 @@ class Header extends React.Component {
       <div className='Header container mt-4 mb-4'>
         <ModalExample
           buttonLabel = "Add Mural"
+          onSubmit={this.props.onSubmit}
         />
       </div>
     );

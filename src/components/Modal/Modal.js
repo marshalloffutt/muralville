@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Button, Modal, ModalHeader, ModalBody, ModalFooter,
+  Button, Modal, ModalHeader, ModalBody,
 } from 'reactstrap';
-// import PropTypes from 'prop-types';
-// import authRequests from '../../helpers/data/authRequests';
+import PropTypes from 'prop-types';
+import authRequests from '../../helpers/data/authRequests';
 
 const defaultMural = {
   title: '',
@@ -14,6 +14,10 @@ const defaultMural = {
 };
 
 class ModalExample extends React.Component {
+  static propTypes = {
+    onSubmit: PropTypes.func,
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -34,6 +38,7 @@ class ModalExample extends React.Component {
   toggle() {
     this.setState({
       modal: !this.state.modal,
+      newMural: defaultMural,
     });
   }
 
@@ -44,6 +49,14 @@ class ModalExample extends React.Component {
   artistChange = e => this.formFieldStringState('artist', e);
 
   imageChange = e => this.formFieldStringState('image', e);
+
+  formSubmit = () => {
+    const { onSubmit } = this.props;
+    const myMural = { ...this.state.newMural };
+    myMural.uid = authRequests.getCurrentUid();
+    onSubmit(myMural);
+    this.setState({ newMural: defaultMural });
+  }
 
   render() {
     const { newMural } = this.state;
@@ -102,13 +115,13 @@ class ModalExample extends React.Component {
                   onChange={this.imageChange}
                 />
               </div>
-              <button className="btn btn-danger">Save Listing</button>
+              <Button color="primary" onClick={(e) => {
+                this.toggle();
+                this.formSubmit();
+                e.preventDefault();
+              }}>Save Mural</Button>
             </form>
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Save Mural</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>
         </Modal>
       </div>
     );
