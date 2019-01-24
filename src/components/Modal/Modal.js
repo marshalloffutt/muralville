@@ -43,7 +43,7 @@ class ModalExample extends React.Component {
 
   artistChange = e => this.formFieldStringState('artist', e);
 
-  imageChange = e => this.formFieldStringState('address', e);
+  imageChange = e => this.formFieldStringState('image', e);
 
   render() {
     const { newMural } = this.state;
