@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import authRequests from '../../../helpers/data/authRequests';
 import muralRequests from '../../../helpers/data/muralRequests';
 
 import Header from '../../Header/Header';
@@ -14,6 +13,8 @@ class Home extends React.Component {
   state = {
     murals: [],
     selected: '',
+    isEditing: false,
+    editId: '-1',
   }
 
   componentDidMount() {
@@ -47,27 +48,50 @@ class Home extends React.Component {
   }
 
   formSubmitEvent = (newMural) => {
-    muralRequests.addMuralAxios(newMural)
-      .then(() => {
-        muralRequests.getMurals()
-          .then((murals) => {
-            this.setState({ murals });
-          });
-      })
-      .catch(err => console.error('error with murals post', err));
+    const { isEditing, editId } = this.state;
+    if (isEditing) {
+      muralRequests.editMuralAxios(editId, newMural)
+        .then(() => {
+          muralRequests.getMurals()
+            .then((murals) => {
+              this.setState({ murals, isEditing: false, editId: '-1' });
+            });
+        })
+        .catch(err => console.error('error with listings post', err));
+    } else {
+      muralRequests.addMuralAxios(newMural)
+        .then(() => {
+          muralRequests.getMurals()
+            .then((murals) => {
+              this.setState({ murals });
+            });
+        })
+        .catch(err => console.error('error with murals post', err));
+    }
   }
 
+  passMuralIdToEdit = muralId => this.setState({ isEditing: true, editId: muralId })
+
   render() {
+    const {
+      murals,
+      selected,
+      isEditing,
+      editId,
+    } = this.state;
+
     const viewCheck = () => {
       if (this.state.selected !== '') {
         return <MuralView
-                  selected={this.state.selected}
-                  murals={this.state.murals}
+                  selected={selected}
+                  murals={murals}
                   goToHome={this.goToHome}
                   deleteMural={this.deleteMural}
+                  isEditing={isEditing}
+                  editId={editId}
                 />;
       } return <MuralsList
-          murals={this.state.murals}
+          murals={murals}
           initializeSingleCardView={this.initializeSingleCardView}
         />;
     };

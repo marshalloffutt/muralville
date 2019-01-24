@@ -4,6 +4,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
+import muralRequests from '../../helpers/data/muralRequests';
 
 const defaultMural = {
   title: '',
@@ -16,6 +17,8 @@ const defaultMural = {
 class ModalExample extends React.Component {
   static propTypes = {
     onSubmit: PropTypes.func,
+    isEditing: PropTypes.bool,
+    editId: PropTypes.string,
   }
 
   constructor(props) {
@@ -58,13 +61,31 @@ class ModalExample extends React.Component {
     this.setState({ newMural: defaultMural });
   }
 
+  componentDidUpdate(prevProps) {
+    const { isEditing, editId } = this.props;
+    if (prevProps !== this.props && isEditing) {
+      muralRequests.getSingleMural(editId)
+        .then((mural) => {
+          this.setState({ newMural: mural.data });
+        })
+        .catch(err => console.error('error with getting single mural', err));
+    }
+  }
+
   render() {
     const { newMural } = this.state;
+    const { isEditing } = this.props;
+    const title = () => {
+      if (isEditing) {
+        return <ModalHeader toggle={this.toggle}>Edit Mural</ModalHeader>;
+      }
+      return <ModalHeader toggle={this.toggle}>New Mural</ModalHeader>;
+    };
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>New Mural</ModalHeader>
+          {title()}
           <ModalBody>
             <form>
               <div className="form-group">
