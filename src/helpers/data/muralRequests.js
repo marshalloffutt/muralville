@@ -25,7 +25,7 @@ const addMuralAxios = newMural => axios.post(`${firebaseUrl}/murals.json`, newMu
 
 const getSingleMural = muralId => axios.get(`${firebaseUrl}/murals/${muralId}.json`);
 
-const editMuralAxios = muralId => axios.put(`${firebaseUrl}/murals/${muralId}.json`);
+const editMuralAxios = (muralId, mural) => axios.put(`${firebaseUrl}/murals/${muralId}.json`, mural);
 
 export default {
   getMurals,

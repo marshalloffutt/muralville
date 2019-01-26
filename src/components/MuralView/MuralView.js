@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ModalExample from '../Modal/Modal';
+import EditMuralModal from '../EditMuralModal/EditMuralModal';
 import authRequests from '../../helpers/data/authRequests';
 import './MuralView.scss';
+import muralShape from '../../helpers/props/muralShape';
 
 class MuralView extends React.Component {
   static propTypes = {
+    mural: muralShape,
     goToHome: PropTypes.func,
     deleteMural: PropTypes.func,
+    passMuralToEdit: PropTypes.func,
   };
-
-  state = {
-    isEditing: false,
-    editId: '-1',
-  }
-
-  passMuralToEdit = muralId => this.setState({ isEditing: true, editId: muralId })
 
   deleteEvent = (e) => {
     e.preventDefault();
@@ -44,10 +40,12 @@ class MuralView extends React.Component {
       if (mural.uid === uid) {
         return (
           <div className="container p-3">
-            <ModalExample
+            <EditMuralModal
               buttonLabel = "Edit"
               onSubmit={this.props.onSubmit}
-              muralId={this.props.selected}
+              mural={mural}
+              editEvent={this.props.editEvent}
+              passMuralToEdit={this.props.passMuralToEdit}
             />
             <button className="btn btn-danger m-2" onClick={this.deleteEvent}>Delete</button>
             <button className="btn btn-primary m-2" onClick={this.goBack}>Back to List</button>

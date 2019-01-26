@@ -70,7 +70,7 @@ class Home extends React.Component {
     }
   }
 
-  passMuralIdToEdit = muralId => this.setState({ isEditing: true, editId: muralId })
+  passMuralToEdit = muralId => this.setState({ isEditing: true, editId: muralId })
 
   render() {
     const {
@@ -89,6 +89,8 @@ class Home extends React.Component {
                   deleteMural={this.deleteMural}
                   isEditing={isEditing}
                   editId={editId}
+                  passMuralToEdit={this.passMuralToEdit}
+                  onSubmit={this.formSubmitEvent}
                 />;
       } return <MuralsList
           murals={murals}
