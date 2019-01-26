@@ -4,7 +4,6 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
-import muralRequests from '../../helpers/data/muralRequests';
 
 const defaultMural = {
   title: '',
@@ -44,7 +43,7 @@ class EditMuralModal extends React.Component {
   toggle() {
     this.setState({
       modal: !this.state.modal,
-      newMural: defaultMural,
+      newMural: this.props.mural,
     });
   }
 
@@ -65,26 +64,13 @@ class EditMuralModal extends React.Component {
   }
 
   editEvent = () => {
-    // e.preventDefault();
     const { passMuralToEdit, mural } = this.props;
     passMuralToEdit(mural.id);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { isEditing, editId } = this.props;
-    if (prevProps !== this.props && isEditing) {
-      muralRequests.getSingleMural(editId)
-        .then((mural) => {
-          this.setState({ newMural: mural.data });
-        })
-        .catch(err => console.error('error with getting single mural', err));
-    }
   }
 
   render() {
     const { newMural } = this.state;
     const { mural } = this.props;
-    // const { editEvent } = this.props;
     return (
       <div>
         <Button color="danger" onClick={(e) => {
@@ -100,6 +86,7 @@ class EditMuralModal extends React.Component {
                 <label htmlFor="title">Title:</label>
                 <input
                   type="text"
+                  contentEditable="true"
                   className="form-control"
                   id="title"
                   aria-describedby="titleHelp"

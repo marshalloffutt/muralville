@@ -23,8 +23,6 @@ const deleteMuralAxios = muralId => axios.delete(`${firebaseUrl}/murals/${muralI
 
 const addMuralAxios = newMural => axios.post(`${firebaseUrl}/murals.json`, newMural);
 
-const getSingleMural = muralId => axios.get(`${firebaseUrl}/murals/${muralId}.json`);
-
 const editMuralAxios = (muralId, mural) => axios.put(`${firebaseUrl}/murals/${muralId}.json`, mural);
 
 export default {
@@ -33,5 +31,4 @@ export default {
   deleteMuralAxios,
   addMuralAxios,
   editMuralAxios,
-  getSingleMural,
 };
