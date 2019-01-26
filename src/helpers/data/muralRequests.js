@@ -1,7 +1,21 @@
 import axios from 'axios';
+import { OpenStreetMapProvider } from 'leaflet-geosearch';
 import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
+
+const provider = new OpenStreetMapProvider();
+
+const results = (resolve, reject) => {
+  provider
+    .search({ query: '4709 Danby Dr, Nashville, TN' })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch(err => reject(err));
+};
+
+results();
 
 const getMurals = () => new Promise((resolve, reject) => {
   axios
