@@ -27,7 +27,7 @@ class EditMuralModal extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      newMural: defaultMural,
+      newMural: this.props.mural,
       mural: this.props.mural,
     };
 
