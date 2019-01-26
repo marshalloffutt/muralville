@@ -107,7 +107,9 @@ class Home extends React.Component {
         </div>
         <div className='content-wrapper'>
           {viewCheck()}
-          <MuralsMap />
+          <MuralsMap
+            murals={murals}
+          />
         </div>
       </div>
     );
