@@ -14,11 +14,13 @@ const defaultMural = {
   uid: '',
 };
 
-class ModalExample extends React.Component {
+class EditMuralModal extends React.Component {
   static propTypes = {
     onSubmit: PropTypes.func,
     isEditing: PropTypes.bool,
     editId: PropTypes.string,
+    editEvent: PropTypes.func,
+    passMuralToEdit: PropTypes.func,
   }
 
   constructor(props) {
@@ -26,6 +28,7 @@ class ModalExample extends React.Component {
     this.state = {
       modal: false,
       newMural: defaultMural,
+      mural: this.props.mural,
     };
 
     this.toggle = this.toggle.bind(this);
@@ -61,6 +64,12 @@ class ModalExample extends React.Component {
     this.setState({ newMural: defaultMural });
   }
 
+  editEvent = () => {
+    // e.preventDefault();
+    const { passMuralToEdit, mural } = this.props;
+    passMuralToEdit(mural.id);
+  }
+
   componentDidUpdate(prevProps) {
     const { isEditing, editId } = this.props;
     if (prevProps !== this.props && isEditing) {
@@ -74,18 +83,17 @@ class ModalExample extends React.Component {
 
   render() {
     const { newMural } = this.state;
-    const { isEditing } = this.props;
-    const title = () => {
-      if (isEditing) {
-        return <ModalHeader toggle={this.toggle}>Edit Mural</ModalHeader>;
-      }
-      return <ModalHeader toggle={this.toggle}>New Mural</ModalHeader>;
-    };
+    const { mural } = this.props;
+    // const { editEvent } = this.props;
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+        <Button color="danger" onClick={(e) => {
+          this.toggle();
+          this.editEvent(mural);
+          e.preventDefault();
+        }}>{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          {title()}
+         <ModalHeader toggle={this.toggle}>Edit Mural</ModalHeader>
           <ModalBody>
             <form>
               <div className="form-group">
@@ -140,7 +148,7 @@ class ModalExample extends React.Component {
                 this.toggle();
                 this.formSubmit();
                 e.preventDefault();
-              }}>Save Mural</Button>
+              }}>Save Changes</Button>
             </form>
           </ModalBody>
         </Modal>
@@ -149,4 +157,4 @@ class ModalExample extends React.Component {
   }
 }
 
-export default ModalExample;
+export default EditMuralModal;
