@@ -2,6 +2,8 @@
   "mural001": {
     "title": "The Nations",
     "address": "5901 California Ave, Nashville, TN 37209",
+    "x": -86.85797271394705,
+    "y": 36.164092499250195,
     "artist": "Brian Wooden, Herb Williams, Rebel Lowks SickArte, Audie Adams, Mobe Oner, Folek Kelof, Chris Zidek, Tess Erlenborn Art, Troy Duff, Emily Miller and Ehsor",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -9,6 +11,8 @@
   "mural002": {
     "title": "Native on a Silo",
     "address": "Centennial Blvd & 51st Ave N, Nashville, TN 37209",
+    "x": -86.849154,
+    "y": 36.16225200000001,
     "artist": "Guido Van Helten",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -16,6 +20,8 @@
   "mural003": {
     "title": "Life Can Be Sweet (Baked On 8th)",
     "address": "1512 8th Ave S, Nashville, TN 37203",
+    "x": -86.77860957198938,
+    "y": 36.137850716342584,
     "artist": "Susanna Chapman",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -23,6 +29,8 @@
   "mural004": {
     "title": "Wish For Peace (Hugh Baby's)",
     "address": "4816 Charlotte Ave, Nashville, TN 37209",
+    "x": -86.84544119608748,
+    "y": 36.15209644604402,
     "artist": "Jake Elliott, Hana Elliott",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "1234"
@@ -30,6 +38,8 @@
   "mural005": {
     "title": "#PeaceLoveGoodDeeds Nashville",
     "address": "2705 12th Ave S Nashville, TN 37204",
+    "x": -86.79007257011345,
+    "y": 36.122733973916525,
     "artist": "Eastside Murals",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "1234"
@@ -37,6 +47,8 @@
   "mural006": {
     "title": "Make A Difference",
     "address": "2601 12th Ave S, Nashville, TN",
+    "x": -86.78982509175354,
+    "y": 36.1238160066651,
     "artist": "Relax Max",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -44,6 +56,8 @@
   "mural007": {
     "title": "I Believe in Nashville (12 South)",
     "address": "2600 12th Ave S Nashville, TN",
+    "x": -86.78985029889219,
+    "y": 36.12338643796529,
     "artist": "Adrien Saporiti",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -51,6 +65,8 @@
   "mural008": {
     "title": "Nashville Looks Good On You",
     "address": "2511 12th Ave S Nashville TN",
+    "x": -86.78966622332479,
+    "y": 36.12447055482136,
     "artist": "The Nash TN",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -58,6 +74,8 @@
   "mural009": {
     "title": "Acoustic Skyline",
     "address": "1004 Division St, Nashville, TN",
+    "x": -86.78249673103385,
+    "y": 36.150963768286445,
     "artist": "Allison Johnson",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -65,6 +83,8 @@
   "mural010": {
     "title": "Rainbow Geometric",
     "address": "610 Magazine St, Nashville, TN 37203",
+    "x": -86.7829724607085,
+    "y": 36.15153392006991,
     "artist": "Nathan Brown",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -72,6 +92,8 @@
   "mural011": {
     "title": "What Lifts You",
     "address": "230 11th Ave S, Nashville, TN 37203",
+    "x": -86.78482124296126,
+    "y": 36.15485950255758,
     "artist": "Kelsey Montague",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -79,6 +101,8 @@
   "mural012": {
     "title": "Green and Blue Abstract",
     "address": "1103 Demonbreun St. Nashville TN",
+    "x": -86.7854233144441,
+    "y": 36.15490186231191,
     "artist": "Ian Ross",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -86,6 +110,8 @@
   "mural013": {
     "title": "Gray Goddess",
     "address": "610 Magazine St, Nashville, TN 37203",
+    "x": -86.7829724607085,
+    "y": 36.15153392006991,
     "artist": "Chris Zidek",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -93,6 +119,8 @@
   "mural014": {
     "title": "Kindness Is",
     "address": "1120 4th Avenue North, Nashville, TN 37208",
+    "x": -86.786715821369,
+    "y": 36.17569003609547,
     "artist": "Sarah Gail Nelson",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -100,6 +128,8 @@
   "mural015": {
     "title": "Hillsboro Village Dragon",
     "address": "1801 21st Avenue South, Nashville, TN 37212",
+    "x": -86.80092450654952,
+    "y": 36.136486854290474,
     "artist": "Andee Rudloff",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -107,6 +137,8 @@
   "mural016": {
     "title": "I Believe in Nashville (Marathon Village)",
     "address": "1402 Clinton Street, Nashville, TN 37203",
+    "x": -86.79688671809227,
+    "y": 36.16407710130029,
     "artist": "Adrien Saporiti",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -114,6 +146,8 @@
   "mural017": {
     "title": "Wrangler",
     "address": "217 2nd Avenue South, Nashville, TN 37201",
+    "x": -86.77353746436589,
+    "y": 36.15928871689084,
     "artist": "Nathan Brown",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "1234"
@@ -121,6 +155,8 @@
   "mural018": {
     "title": "Abstract Colors",
     "address": "299 11th Avenue South, Nashville, TN 37203",
+    "x": -86.78448648839064,
+    "y": 36.154099759140635,
     "artist": "Jason Woolside",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
@@ -128,6 +164,8 @@
   "mural019": {
     "title": "East Nashville",
     "address": "600 Main St, Nashville TN 37206",
+    "x": -86.76314176628784,
+    "y": 36.17365276017101,
     "artist": "Color Theory Studios",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "1234"
@@ -135,6 +173,8 @@
   "mural020": {
     "title": "Athens of the South",
     "address": "704 Main St, Nashville TN",
+    "x": -86.76046329182307,
+    "y": 36.17468678570624,
     "artist": "Eric Bass",
     "image": "https://cdn.nashvillescene.com/files/base/scomm/nvs/image/2018/06/640w/IMG_20180612_095744_868.5b21400be80c2.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
