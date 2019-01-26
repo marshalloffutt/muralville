@@ -1,34 +1,34 @@
 import axios from 'axios';
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import { EsriProvider } from 'leaflet-geosearch';
 import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const provider = new OpenStreetMapProvider();
-
-const results = (resolve, reject) => {
-  provider
-    .search({ query: '4709 Danby Dr, Nashville, TN' })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch(err => reject(err));
-};
-
-results();
+const provider = new EsriProvider();
 
 const getMurals = () => new Promise((resolve, reject) => {
   axios
     .get(`${firebaseUrl}/murals.json`)
     .then((res) => {
-      const listings = [];
+      let murals = [];
       if (res.data !== null) {
         Object.keys(res.data).forEach((key) => {
           res.data[key].id = key;
-          listings.push(res.data[key]);
+          murals.push(res.data[key]);
+        });
+        let counter = 0;
+        murals.forEach((indivMural) => {
+          provider.search({ query: indivMural.address })
+            .then((stuff) => {
+              const { x, y } = stuff[0];
+              counter += 1;
+              murals = murals.map(mural => Object.assign({ ...mural, x, y }));
+              if (counter === murals.length - 1) {
+                resolve(murals);
+              }
+            });
         });
       }
-      resolve(listings);
     })
     .catch(err => reject(err));
 });
