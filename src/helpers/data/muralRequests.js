@@ -21,6 +21,7 @@ const getMurals = () => new Promise((resolve, reject) => {
           provider.search({ query: indivMural.address })
             .then((stuff) => {
               const { x, y } = stuff[0];
+              console.log(stuff);
               counter += 1;
               murals = murals.map(mural => Object.assign({ ...mural, x, y }));
               if (counter === murals.length - 1) {
