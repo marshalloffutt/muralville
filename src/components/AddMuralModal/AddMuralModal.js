@@ -70,7 +70,6 @@ class AddMuralModal extends React.Component {
     this.setState({ newMural: defaultMural });
   });
 
-
   render() {
     const { newMural } = this.state;
     return (
