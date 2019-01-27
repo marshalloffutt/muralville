@@ -4,11 +4,14 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
+import geoRequests from '../../helpers/data/geoRequests';
 
 const defaultMural = {
   title: '',
   address: '',
   artist: '',
+  x: '',
+  y: '',
   image: '',
   uid: '',
 };
@@ -50,13 +53,23 @@ class AddMuralModal extends React.Component {
 
   imageChange = e => this.formFieldStringState('image', e);
 
-  formSubmit = () => {
+  formSubmit = () => new Promise((resolve, reject) => {
     const { onSubmit } = this.props;
     const myMural = { ...this.state.newMural };
-    myMural.uid = authRequests.getCurrentUid();
-    onSubmit(myMural);
+    geoRequests.getXandY(myMural.address)
+      .then((stuff) => {
+        const finalMural = { ...myMural };
+        const { x, y } = stuff;
+        finalMural.x = x;
+        finalMural.y = y;
+        finalMural.uid = authRequests.getCurrentUid();
+        resolve(finalMural);
+        onSubmit(finalMural);
+      })
+      .catch(err => reject(err));
     this.setState({ newMural: defaultMural });
-  }
+  });
+
 
   render() {
     const { newMural } = this.state;
