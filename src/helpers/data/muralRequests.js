@@ -1,38 +1,49 @@
 import axios from 'axios';
-import { EsriProvider } from 'leaflet-geosearch';
+
 import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
-
-const provider = new EsriProvider();
 
 const getMurals = () => new Promise((resolve, reject) => {
   axios
     .get(`${firebaseUrl}/murals.json`)
     .then((res) => {
-      let murals = [];
+      const listings = [];
       if (res.data !== null) {
         Object.keys(res.data).forEach((key) => {
           res.data[key].id = key;
-          murals.push(res.data[key]);
-        });
-        let counter = 0;
-        murals.forEach((indivMural) => {
-          provider.search({ query: indivMural.address })
-            .then((stuff) => {
-              const { x, y } = stuff[0];
-              console.log(stuff);
-              counter += 1;
-              murals = murals.map(mural => Object.assign({ ...mural, x, y }));
-              if (counter === murals.length - 1) {
-                resolve(murals);
-              }
-            });
+          listings.push(res.data[key]);
         });
       }
+      resolve(listings);
     })
     .catch(err => reject(err));
 });
+
+// const getMurals = () => new Promise((resolve, reject) => {
+//   axios
+//     .get(`${firebaseUrl}/murals.json`)
+//     .then((res) => {
+//       const murals = [];
+//       if (res.data !== null) {
+//         Object.keys(res.data).forEach((key) => {
+//           res.data[key].id = key;
+//           murals.push(res.data[key]);
+//         });
+//         murals.forEach((mural) => {
+//           provider.search({ query: mural.address })
+//             .then((stuff) => {
+//               const { x, y } = stuff[0];
+//               mural.x = parseFloat(x);
+//               mural.y = parseFloat(y);
+//               console.log(mural);
+//               resolve(murals);
+//             });
+//         });
+//       }
+//     })
+//     .catch(err => reject(err));
+// });
 
 const deleteMuralAxios = muralId => axios.delete(`${firebaseUrl}/murals/${muralId}.json`);
 
