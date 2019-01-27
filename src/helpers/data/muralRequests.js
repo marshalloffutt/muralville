@@ -1,10 +1,10 @@
 import axios from 'axios';
-// import { EsriProvider } from 'leaflet-geosearch';
+import { EsriProvider } from 'leaflet-geosearch';
 import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
 
-// const provider = new EsriProvider();
+const provider = new EsriProvider();
 
 const getMurals = () => new Promise((resolve, reject) => {
   axios
