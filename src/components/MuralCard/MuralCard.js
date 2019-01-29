@@ -16,8 +16,10 @@ class MuralCard extends React.Component {
   clickedCard = (e) => {
     e.preventDefault();
     const muralId = e.target.closest('.mural').id;
+    // eslint-disable-next-line no-return-assign
+    const selectedMural = this.props.murals.find(mural => mural.id === muralId);
     const { initializeSingleCardView } = this.props;
-    initializeSingleCardView(muralId);
+    initializeSingleCardView(muralId, selectedMural);
   }
 
   render() {

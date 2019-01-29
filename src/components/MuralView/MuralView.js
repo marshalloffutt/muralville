@@ -11,6 +11,7 @@ class MuralView extends React.Component {
     goToHome: PropTypes.func,
     deleteMural: PropTypes.func,
     passMuralToEdit: PropTypes.func,
+    flyToLocation: PropTypes.func,
   };
 
   deleteEvent = (e) => {
@@ -25,6 +26,11 @@ class MuralView extends React.Component {
     const { goToHome } = this.props;
     goToHome();
   };
+
+  zoomInEvent = (e) => {
+    const { flyToLocation, selectedX, selectedY } = this.props;
+    flyToLocation(selectedX, selectedY);
+  }
 
   render() {
     const uid = authRequests.getCurrentUid();
@@ -62,15 +68,16 @@ class MuralView extends React.Component {
               <div className="col-md-4">
                   <img
                     src={mural.image}
-                    className="w-100"
+                    className="w-100 h-100 big-mural"
                     alt="mural"
+                    onClick={this.zoomInEvent}
                   />
               </div>
               <div className="col-md-8 px-3">
                   <div className="card-block px-3">
                     <h2 className="card-title">{mural.title}</h2>
-                    <h5 className="card-text">{mural.artist}</h5>
                     <h5 className="card-text">{mural.address}</h5>
+                    <h5 className="card-text">Artist: {mural.artist}</h5>
                     {makeButtons()}
                   </div>
               </div>
