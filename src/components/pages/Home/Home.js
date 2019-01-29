@@ -12,7 +12,10 @@ import './Home.scss';
 class Home extends React.Component {
   state = {
     murals: [],
+    map: {},
     selected: '',
+    selectedX: '',
+    selectedY: '',
     isEditing: false,
     editId: '-1',
   }
@@ -29,9 +32,13 @@ class Home extends React.Component {
       .catch(err => console.error('error with murals GET', err));
   }
 
-  initializeSingleCardView = (muralId) => {
+  initializeSingleCardView = (muralId, selectedMural) => {
     const selected = muralId;
-    this.setState({ selected });
+    this.setState({
+      selected,
+      selectedX: selectedMural.x,
+      selectedY: selectedMural.y,
+    });
   }
 
   deleteMural = (muralId) => {
@@ -45,6 +52,16 @@ class Home extends React.Component {
 
   goToHome = () => {
     this.setState({ selected: '' });
+  }
+
+  flyToLocation = (x, y) => {
+    this.state.map.flyTo([y, x], 16);
+    // console.log(this.map);
+  }
+
+  setMap = (map) => {
+    this.setState({ map });
+    // console.log(map);
   }
 
   formSubmitEvent = (newMural) => {
@@ -76,6 +93,8 @@ class Home extends React.Component {
     const {
       murals,
       selected,
+      selectedX,
+      selectedY,
       isEditing,
       editId,
     } = this.state;
@@ -84,11 +103,14 @@ class Home extends React.Component {
       if (this.state.selected !== '') {
         return <MuralView
                   selected={selected}
+                  selectedX={selectedX}
+                  selectedY={selectedY}
                   murals={murals}
                   goToHome={this.goToHome}
                   deleteMural={this.deleteMural}
                   isEditing={isEditing}
                   editId={editId}
+                  flyToLocation={this.flyToLocation}
                   passMuralToEdit={this.passMuralToEdit}
                   onSubmit={this.formSubmitEvent}
                 />;
@@ -109,6 +131,7 @@ class Home extends React.Component {
           {viewCheck()}
           <MuralsMap
             murals={murals}
+            setMap={this.setMap}
           />
         </div>
       </div>

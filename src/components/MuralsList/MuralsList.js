@@ -15,9 +15,11 @@ class MuralsList extends React.Component {
       murals,
       initializeSingleCardView,
     } = this.props;
+
     const muralsItemComponents = murals.map(mural => (
         <MuralCard
           mural={mural}
+          murals={murals}
           key={mural.id}
           initializeSingleCardView={initializeSingleCardView}
         />
