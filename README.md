@@ -12,8 +12,8 @@ Current production build: (https://muralville.firebaseapp.com/home)
 ## Screenshots
 
 ![homeview](src/images/screenshot-1.png)
-![muralview](src/images/screenshot-1.png)
-![editview](src/images/screenshot-1.png)
+![muralview](src/images/screenshot-2.png)
+![editview](src/images/screenshot-3.png)
 
 ## Technologies Used
 * React
