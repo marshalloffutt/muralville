@@ -21,11 +21,11 @@ class MuralCard extends React.Component {
   render() {
     const { mural } = this.props;
     return (
-      <div class="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
-        <div class="card mural-card">
-          <div class="pt-3 pl-3 pr-3">
-              <img class="card-img-top" src={mural.image} alt={mural.title}/>
-              <h4 class="card-title mural-card-title mt-1">{mural.title}</h4>
+      <div className="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
+        <div className="card mural-card">
+          <div className="pt-3 pl-3 pr-3">
+              <img className="card-img-top" src={mural.image} alt={mural.title}/>
+              <h3 className="card-title mural-card-title mt-1">{mural.title}</h3>
           </div>
         </div>
       </div>
