@@ -53,8 +53,8 @@ class MuralView extends React.Component {
               editEvent={this.props.editEvent}
               passMuralToEdit={this.props.passMuralToEdit}
             />
-            <button className="btn btn-danger m-2" onClick={this.deleteEvent}>Delete</button>
-            <button className="btn btn-primary m-2" onClick={this.goBack}>Back to List</button>
+            <button className="btn btn-danger m-2 delete-button" onClick={this.deleteEvent}>Delete</button>
+            <button className="btn btn-primary m-2 go-back-button" onClick={this.goBack}>Back to List</button>
           </div>
         );
       } return <button className="btn btn-primary m-2" onClick={this.goBack}>Back to List</button>;

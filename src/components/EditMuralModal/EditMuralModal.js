@@ -5,6 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import geoRequests from '../../helpers/data/geoRequests';
+import './EditMuralModal.scss';
 
 const defaultMural = {
   title: '',
@@ -85,7 +86,7 @@ class EditMuralModal extends React.Component {
     const { mural } = this.props;
     return (
       <div>
-        <Button color="danger" onClick={(e) => {
+        <Button color="danger" className="edit-button" onClick={(e) => {
           this.toggle();
           this.editEvent(mural);
           e.preventDefault();

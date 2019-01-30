@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.edit-button {
+  background-color: $yellow-darker;
+  border-color: $orange-darker;
+  &:hover {
+    background-color: $orange-darker;
+    border-color: $orange-darker;
+  }
+}
