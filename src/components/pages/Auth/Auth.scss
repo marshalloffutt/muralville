@@ -1,5 +1,18 @@
 @import '../../../styles/variables';
 
+.Auth {
+  width: 100%;
+  height: 89vh;
+  background: url('../../../images/brickwall.png');
+}
+
+.logo {
+  background: url('../../../images/full_brand.png') no-repeat;
+  display: block;
+  height: 800px;
+  mix-blend-mode: multiply;
+}
+
 .loginBtn {
   margin:20px auto;
   border-radius:10px;

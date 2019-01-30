@@ -13,10 +13,14 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <Button outline color="danger" className="loginBtn" onClick={this.authenticateUser}>
-        <i className="fab fa-google-plus-square fa-2x btnIcon"></i>
-        <span className="btnText"> Sign in with Google</span>
-      </Button>
+      <div className="Auth">
+        <div className="logo">
+        <Button outline color="danger" className="loginBtn" onClick={this.authenticateUser}>
+          <i className="fab fa-google-plus-square fa-2x btnIcon"></i>
+          <span className="btnText"> Sign in with Google</span>
+        </Button>
+        </div>
+      </div>
     );
   }
 }
