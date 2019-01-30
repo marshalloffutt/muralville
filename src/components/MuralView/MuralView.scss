@@ -5,8 +5,14 @@
   max-width: 200px;
 }
 
+.mural-view-card {
+  background-color: transparent;
+  border-color: transparent;
+}
+
 .big-mural {
   cursor: pointer;
+  width: 100%;
 }
 
 .delete-button {

@@ -10,7 +10,7 @@ class MuralMapCard extends React.Component {
           <h5>{mural.title}</h5>
           <img className='map-card-img' src={mural.image} alt={mural.title}/>
           <p>Artist: {mural.artist}</p>
-          <p>Address: {mural.address}</p>
+          <p>{mural.address}</p>
       </div>
     );
   }
