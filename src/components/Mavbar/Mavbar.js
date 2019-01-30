@@ -9,7 +9,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import logo from '../../images/brand.png';
+import logo from '../../images/mavbar_brand.png';
 import './Mavbar.scss';
 
 class Mavbar extends React.Component {
