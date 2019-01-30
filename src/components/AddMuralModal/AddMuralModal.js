@@ -5,6 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import geoRequests from '../../helpers/data/geoRequests';
+import './AddMuralModal.scss';
 
 const defaultMural = {
   title: '',
@@ -74,7 +75,7 @@ class AddMuralModal extends React.Component {
     const { newMural } = this.state;
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+        <Button color="danger" className="add-button" onClick={this.toggle}>{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>New Mural</ModalHeader>
           <ModalBody>
