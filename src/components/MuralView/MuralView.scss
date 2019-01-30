@@ -1,8 +1,34 @@
+@import '../../styles/variables';
+
 .indiv-mural-img {
   max-height: 200px;
   max-width: 200px;
 }
 
+.mural-view-card {
+  background-color: transparent;
+  border-color: transparent;
+}
+
 .big-mural {
   cursor: pointer;
+  width: 100%;
+}
+
+.delete-button {
+  background-color: $pink-darker;
+  border-color: $red;
+  &:hover {
+    background-color: $red;
+    border-color: $red;
+  }
+}
+
+.go-back-button {
+  background-color: $teal;
+  border-color: $blue;
+  &:hover {
+    background-color: $blue;
+    border-color: $blue;
+  }
 }

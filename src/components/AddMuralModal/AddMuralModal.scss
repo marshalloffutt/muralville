@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.add-button {
+  background-color: $teal-lighter;
+  border-color: $teal;
+  &:hover {
+    background-color: $teal;
+    border-color: $teal;
+  }
+}

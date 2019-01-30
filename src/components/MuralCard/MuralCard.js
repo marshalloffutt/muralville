@@ -1,8 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card, CardImg, CardBody,
-} from 'reactstrap';
 import muralShape from '../../helpers/props/muralShape';
 import './MuralCard.scss';
 // import tempMural from '../../images/temp_mural.png';
@@ -15,8 +12,7 @@ class MuralCard extends React.Component {
 
   clickedCard = (e) => {
     e.preventDefault();
-    const muralId = e.target.closest('.mural').id;
-    // eslint-disable-next-line no-return-assign
+    const muralId = e.target.closest('.mural-item').id;
     const selectedMural = this.props.murals.find(mural => mural.id === muralId);
     const { initializeSingleCardView } = this.props;
     initializeSingleCardView(muralId, selectedMural);
@@ -25,13 +21,13 @@ class MuralCard extends React.Component {
   render() {
     const { mural } = this.props;
     return (
-      <div id={mural.id} className="col-5 m-2 mural" onClick={this.clickedCard}>
-        <Card className="mural-item">
-          <CardImg top width="100%" height="50%" src={mural.image} alt={mural.title} />
-          <CardBody>
-            <h3>{mural.title}</h3>
-          </CardBody>
-        </Card>
+      <div className="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
+        <div className="card mural-card">
+          <div className="pt-3 pl-3 pr-3">
+              <img className="card-img-top" src={mural.image} alt={mural.title}/>
+              <h3 className="card-title mural-card-title mt-1">{mural.title}</h3>
+          </div>
+        </div>
       </div>
     );
   }

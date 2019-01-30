@@ -56,12 +56,10 @@ class Home extends React.Component {
 
   flyToLocation = (x, y) => {
     this.state.map.flyTo([y, x], 16);
-    // console.log(this.map);
   }
 
   setMap = (map) => {
     this.setState({ map });
-    // console.log(map);
   }
 
   formSubmitEvent = (newMural) => {
