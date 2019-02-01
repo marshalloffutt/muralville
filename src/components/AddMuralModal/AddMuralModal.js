@@ -5,7 +5,6 @@ import {
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import geoRequests from '../../helpers/data/geoRequests';
-import bingRequests from '../../helpers/data/bingRequests';
 import './AddMuralModal.scss';
 
 const defaultMural = {
@@ -45,7 +44,6 @@ class AddMuralModal extends React.Component {
       modal: !this.state.modal,
       newMural: defaultMural,
     });
-    bingRequests.getSuggestion('4709 Danby Dr, Nashville');
   }
 
   titleChange = e => this.formFieldStringState('title', e);

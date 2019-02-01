@@ -12,8 +12,9 @@ const getSuggestion = query => new Promise((resolve, reject) => {
     },
   })
     .then((results) => {
-      console.log(query);
-      console.log(results);
+      const suggestions = results.data.resourceSets[0].resources[0].value;
+      const address = suggestions.map(suggestion => suggestion.address.formattedAddress);
+      resolve(address);
     })
     .catch(err => reject(err));
 });
