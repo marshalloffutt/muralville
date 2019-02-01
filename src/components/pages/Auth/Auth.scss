@@ -1,21 +1,24 @@
 @import '../../../styles/variables';
 
+.body {
+  background: url('../../../images/brickwall.png');
+}
+
 .Auth {
   width: 100%;
-  height: 89vh;
+  height: calc(100vh - 56px);
   background: url('../../../images/brickwall.png');
 }
 
 .logo {
-  background: url('../../../images/full_brand.png') no-repeat;
-  display: block;
-  height: 800px;
   mix-blend-mode: multiply;
-  margin: auto 0;
+  margin-top: -100px;
+  max-width: 800px;
 }
 
 .loginBtn {
-  margin:20px auto;
+  display: block;
+  margin: 0 auto;
   border-radius:10px;
   -webkit-border-radius:10px;
   box-shadow:0 1px 2px #5e5d5b;

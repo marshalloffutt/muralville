@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'reactstrap';
 import authRequests from '../../../helpers/data/authRequests';
 import './Auth.scss';
+import fullBrand from '../../../images/full_brand.png';
 
 class Auth extends React.Component {
   authenticateUser = (e) => {
@@ -14,13 +15,12 @@ class Auth extends React.Component {
   render() {
     return (
       <div className="Auth">
-        <div className="logo">
-        <Button outline color="danger" className="loginBtn" onClick={this.authenticateUser}>
-          <i className="fab fa-google-plus-square fa-2x btnIcon"></i>
-          <span className="btnText"> Sign in with Google</span>
-        </Button>
+          <img src={fullBrand} alt="text" className="logo"/>
+          <Button outline color="danger" className="loginBtn" onClick={this.authenticateUser}>
+            <i className="fab fa-google-plus-square fa-2x btnIcon"></i>
+            <span className="btnText"> Sign in with Google</span>
+          </Button>
         </div>
-      </div>
     );
   }
 }
