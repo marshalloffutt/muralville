@@ -1,0 +1,14 @@
+{
+  "user1": {
+    "userName": "Taylor Swift",
+    "uid": "37463"
+  },
+  "user2": {
+    "userName": "Thomas Jefferson",
+    "uid": "67890"
+  },
+  "user3": {
+    "userName": "Sun Tzu",
+    "uid": "12345"
+  }
+}
