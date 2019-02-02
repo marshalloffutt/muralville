@@ -3,7 +3,7 @@ import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getFavorites = () => new Promise((resolve, reject) => {
+const getAllFavorites = () => new Promise((resolve, reject) => {
   axios
     .get(`${firebaseUrl}/favorites.json`)
     .then((res) => {
@@ -24,7 +24,7 @@ const addFavoriteAxios = favoriteId => axios.delete(`${firebaseUrl}/favorites/${
 const deleteFavoriteAxios = newFavorite => axios.post(`${firebaseUrl}/favorites.json`, newFavorite);
 
 export default {
-  getFavorites,
+  getAllFavorites,
   addFavoriteAxios,
   deleteFavoriteAxios,
 };
