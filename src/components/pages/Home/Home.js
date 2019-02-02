@@ -16,7 +16,6 @@ class Home extends React.Component {
   state = {
     user: {},
     murals: [],
-    favorites: [],
     map: {},
     selected: '',
     selectedX: '',
@@ -28,21 +27,11 @@ class Home extends React.Component {
   componentDidMount() {
     this.getAndDisplayMurals();
     this.getLoggedInUser();
-    this.getAndDisplayFavorites();
-  }
-
-  getAndDisplayFavorites = () => {
-    const currentUid = authRequests.getCurrentUid();
-    // console.log(currentUid);
-    smashRequests.getFavoritedMurals(currentUid)
-      .then((favorites) => {
-        this.setState({ favorites });
-      })
-      .catch(err => console.error('error with getting faves', err));
   }
 
   getAndDisplayMurals = () => {
-    muralRequests.getMurals()
+    const currentUid = authRequests.getCurrentUid();
+    smashRequests.getFavoritedMurals(currentUid)
       .then((murals) => {
         this.setState({ murals });
       })

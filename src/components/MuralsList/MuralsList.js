@@ -16,14 +16,22 @@ class MuralsList extends React.Component {
       initializeSingleCardView,
     } = this.props;
 
-    const muralsItemComponents = murals.map(mural => (
+    const muralsItemComponents = murals
+      .sort((x, y) => {
+        if (x.isFavorite === y.isFavorite) {
+          return 0;
+        }
+        return x.isFavorite ? -1 : 1;
+      })
+
+      .map(mural => (
         <MuralCard
           mural={mural}
           murals={murals}
           key={mural.id}
           initializeSingleCardView={initializeSingleCardView}
         />
-    ));
+      ));
     return (
       <div className='MuralsList flex-wrap d-flex justify-content-center flex-row p-1'>
         {muralsItemComponents}

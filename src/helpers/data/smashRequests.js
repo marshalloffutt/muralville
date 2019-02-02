@@ -6,13 +6,13 @@ const getFavoritedMurals = currentUid => new Promise((resolve, reject) => {
     .then((murals) => {
       favoriteRequests.getAllFavorites()
         .then((favorites) => {
-          favorites.forEach((favorite) => {
-            const match = murals.find(mural => mural.id === favorite.muralId);
-            if (match.uid === currentUid) {
-              match.isFavorite = true;
-            }
+          const muralsWithFavorite = murals.map((mural) => {
+            const match = favorites.filter(favorite => favorite.muralId === mural.id && currentUid === favorite.uid);
+            const muralWithFavorite = { ...mural };
+            muralWithFavorite.isFavorite = match.length > 0;
+            return muralWithFavorite;
           });
-          resolve(murals);
+          resolve(muralsWithFavorite);
         });
     })
     .catch(err => reject(err));
