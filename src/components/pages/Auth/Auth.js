@@ -1,15 +1,29 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 import authRequests from '../../../helpers/data/authRequests';
+import userRequests from '../../../helpers/data/userRequests';
 import './Auth.scss';
 import fullBrand from '../../../images/full_brand.png';
 
 class Auth extends React.Component {
   authenticateUser = (e) => {
     e.preventDefault();
-    authRequests.authenticate().then(() => {
-      this.props.history.push('/home');
-    }).catch(err => console.error('there was an error in authenticating'));
+    authRequests.authenticate()
+      .then((results) => {
+        console.log(results); // look for results.user.uid
+        userRequests.getUserByUid(results.user.uid)
+          .then((userObject) => {
+            // console.log the userobject
+            if (!userObject) {
+              const newUserObject = {
+                userName: `${results.user.displayName}`,
+                uid: `${results.user.uid}`,
+              };
+              console.log(newUserObject);
+            }
+          });
+        this.props.history.push('/home');
+      }).catch(err => console.error('error in authenticating', err));
   }
 
   render() {
