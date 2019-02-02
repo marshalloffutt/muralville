@@ -25,7 +25,7 @@ class MuralCard extends React.Component {
           <div className="pt-3 pl-3 pr-3">
             <div className="container card-img-container">
               <img className="card-img-top" src={mural.image} alt={mural.title}/>
-              <button className="btn card-img-button"><i class="fas fa-star fa-2x"></i></button>
+              <button className="btn card-img-button"><i className="fas fa-star fa-2x"></i></button>
             </div>
               <h3 className="card-title mural-card-title mt-1">{mural.title}</h3>
           </div>
