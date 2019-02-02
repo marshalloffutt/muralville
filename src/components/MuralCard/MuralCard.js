@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import muralShape from '../../helpers/props/muralShape';
 import './MuralCard.scss';
-// import tempMural from '../../images/temp_mural.png';
 
 class MuralCard extends React.Component {
   static propTypes = {
