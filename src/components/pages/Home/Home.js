@@ -1,6 +1,7 @@
 import React from 'react';
 
 import muralRequests from '../../../helpers/data/muralRequests';
+import userRequests from '../../../helpers/data/userRequests';
 
 import Header from '../../Header/Header';
 import MuralsList from '../../MuralsList/MuralsList';
@@ -8,9 +9,11 @@ import MuralsMap from '../../MuralsMap/MuralsMap';
 import MuralView from '../../MuralView/MuralView';
 
 import './Home.scss';
+import authRequests from '../../../helpers/data/authRequests';
 
 class Home extends React.Component {
   state = {
+    user: {},
     murals: [],
     map: {},
     selected: '',
@@ -22,6 +25,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.getAndDisplayMurals();
+    this.getLoggedInUser();
   }
 
   getAndDisplayMurals = () => {
@@ -30,6 +34,15 @@ class Home extends React.Component {
         this.setState({ murals });
       })
       .catch(err => console.error('error with murals GET', err));
+  }
+
+  getLoggedInUser = () => {
+    const uid = authRequests.getCurrentUid();
+    userRequests.getUserByUid(uid)
+      .then((user) => {
+        this.setState({ user });
+      })
+      .catch(err => console.error('error with user GET', err));
   }
 
   initializeSingleCardView = (muralId, selectedMural) => {
