@@ -10,19 +10,19 @@ class Auth extends React.Component {
     e.preventDefault();
     authRequests.authenticate()
       .then((results) => {
-        console.log(results); // look for results.user.uid
         userRequests.getUserByUid(results.user.uid)
           .then((userObject) => {
-            // console.log the userobject
             if (!userObject) {
               const newUserObject = {
                 userName: `${results.user.displayName}`,
                 uid: `${results.user.uid}`,
               };
-              console.log(newUserObject);
+              userRequests.createUser(newUserObject)
+                .then(() => {
+                  this.props.history.push('/home');
+                });
             }
           });
-        this.props.history.push('/home');
       }).catch(err => console.error('error in authenticating', err));
   }
 
