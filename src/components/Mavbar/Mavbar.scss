@@ -8,10 +8,10 @@
   background-image: url('../../images/brickwall.png');
   background-color: $background !important;
   background-blend-mode: multiply;
-    // img {
-    //   max-height: 110px;
-    //   max-width: 110px;
-    // }
+    img {
+      max-height: 110px;
+      max-width: 110px;
+    }
 }
 
 .nav-link {

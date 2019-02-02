@@ -34,7 +34,7 @@ class Mavbar extends React.Component {
       <div className="mavbar">
         <Navbar className="my-navbar" color="light" light expand="md">
           <NavbarBrand href="/">
-            <img className="d-inline-block align-top" height="30" width="30" src={logo} alt="muralville logo" />
+            <img className="d-inline-block align-top" src={logo} alt="muralville logo" />
           </NavbarBrand>
           <NavbarToggler onClick={e => this.toggle(e)} />
           <Collapse isOpen={this.state.isOpen} navbar>
