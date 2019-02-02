@@ -54,8 +54,8 @@ class Home extends React.Component {
     this.setState({ selected: '' });
   }
 
-  flyToLocation = (x, y) => {
-    this.state.map.flyTo([y, x], 16);
+  flyToLocation = (x, y, zoom) => {
+    this.state.map.flyTo([y, x], zoom);
   }
 
   setMap = (map) => {

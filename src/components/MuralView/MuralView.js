@@ -23,13 +23,18 @@ class MuralView extends React.Component {
 
   goBack = (e) => {
     e.preventDefault();
-    const { goToHome } = this.props;
+    const { goToHome, flyToLocation } = this.props;
+    const selectedY = 36.1627;
+    const selectedX = -86.7816;
+    const zoom = 13;
     goToHome();
+    flyToLocation(selectedX, selectedY, zoom);
   };
 
   zoomInEvent = (e) => {
     const { flyToLocation, selectedX, selectedY } = this.props;
-    flyToLocation(selectedX, selectedY);
+    const zoom = 16;
+    flyToLocation(selectedX, selectedY, zoom);
   }
 
   render() {
