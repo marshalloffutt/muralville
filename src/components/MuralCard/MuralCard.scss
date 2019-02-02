@@ -36,19 +36,19 @@
   color: #15425e;
 }
 
-.card-img-container {
+.parent-div {
   position: relative;
-  margin: 0;
-  padding: 0;
 }
 
-.card-img-container .card-img-button {
+.parent-div .card-img-button {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  z-index: 500;
+  top: 18%;
+  left: 18%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   color: $white;
+  cursor: pointer;
 
   &:hover {
     color: $yellow;
