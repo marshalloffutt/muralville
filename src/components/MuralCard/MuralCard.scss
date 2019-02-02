@@ -54,3 +54,18 @@
     color: $yellow;
   }
 }
+
+.parent-div .card-img-button-favorite {
+  position: absolute;
+  z-index: 500;
+  top: 18%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: $yellow;
+  cursor: pointer;
+
+  &:hover {
+    color: $yellow-darker;
+  }
+}

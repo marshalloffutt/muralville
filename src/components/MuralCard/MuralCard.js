@@ -23,11 +23,18 @@ class MuralCard extends React.Component {
     console.log(muralId);
   }
 
+  makeStars = () => {
+    const { mural } = this.props;
+    if (mural.isFavorite === true) {
+      return <i id={mural.id} className="fas fa-star fa-2x card-img-button-favorite" onClick={this.favoriteToggle}></i>;
+    } return <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteToggle}></i>;
+  }
+
   render() {
     const { mural } = this.props;
     return (
       <div className="parent-div p-0 m-0">
-        <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteToggle}></i>
+        {this.makeStars()}
         <div className="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
           <div className="card mural-card">
             <div className="pt-3 pl-3 pr-3">
