@@ -8,14 +8,14 @@ const getMurals = () => new Promise((resolve, reject) => {
   axios
     .get(`${firebaseUrl}/murals.json`)
     .then((res) => {
-      const listings = [];
+      const murals = [];
       if (res.data !== null) {
         Object.keys(res.data).forEach((key) => {
           res.data[key].id = key;
-          listings.push(res.data[key]);
+          murals.push(res.data[key]);
         });
       }
-      resolve(listings);
+      resolve(murals);
     })
     .catch(err => reject(err));
 });

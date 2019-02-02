@@ -27,11 +27,45 @@
 
   &:hover {
     box-shadow: 4px 4px 4px 0 rgba(0, 0, .6, .14), 0 4px 2px -2px rgba(0, 0, .6, .16), 0 1px 5px 0 rgba(0, 0, .6, .16);
-}
+  }
 }
 
 .mural-card-title {
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
   color: #15425e;
+}
+
+.parent-div {
+  position: relative;
+}
+
+.parent-div .card-img-button {
+  position: absolute;
+  z-index: 500;
+  top: 18%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    color: $yellow;
+  }
+}
+
+.parent-div .card-img-button-favorite {
+  position: absolute;
+  z-index: 500;
+  top: 18%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: $yellow;
+  cursor: pointer;
+
+  &:hover {
+    color: $yellow-darker;
+  }
 }
