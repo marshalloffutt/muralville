@@ -63,11 +63,11 @@
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
   },
   "mural008": {
-    "title": "Nashville Looks Good On You",
-    "address": "2511 12th Ave S Nashville TN",
-    "x": -86.78966622332479,
-    "y": 36.12447055482136,
-    "artist": "The Nash TN",
+    "title": "Rainbow Pizza",
+    "address": "1012 Woodland Street",
+    "x": -86.750460,
+    "y": 36.177200,
+    "artist": "Nathan Brown",
     "image": "https://static-40.sinclairstoryline.com/resources/media/12841201-fd39-4dc5-aec9-cc617a777e07-large16x9_nashvillelooksgoodonyu.jpg?1527791439664",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
   },
@@ -176,6 +176,15 @@
     "x": -86.745844,
     "y": 36.189291,
     "artist": "Byran Deese",
+    "image": "https://photos.smugmug.com/USA/Tennessee/Nashville/i-nhHwFjw/0/5eb261e4/L/Nashville-871-L.jpg",
+    "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
+  },
+  "mural023": {
+    "title": "Floral Wall",
+    "address": "2900 12th Ave S, Nashville, TN",
+    "x": 86.790130,
+    "y": 36.121440,
+    "artist": "",
     "image": "https://photos.smugmug.com/USA/Tennessee/Nashville/i-nhHwFjw/0/5eb261e4/L/Nashville-871-L.jpg",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
   }
