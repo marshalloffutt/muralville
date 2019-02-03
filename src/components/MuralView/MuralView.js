@@ -74,28 +74,13 @@ class MuralView extends React.Component {
     };
 
     return (
-      <div className='MuralView container'>
-        <div className="container py-3">
-          <div className="card mural-view-card">
-            <div className="row ">
-              <div className="col-md-4">
-                  <img
-                    src={mural.image}
-                    className="w-100 h-100 big-mural"
-                    alt="mural"
-                    onClick={this.zoomInEvent}
-                  />
-              </div>
-              <div className="col-md-8 px-3">
-                  <div className="card-block px-3">
-                    <h2 className="card-title">{mural.title}</h2>
-                    <h5 className="card-text">{mural.address}</h5>
-                    {writeArtist()}
-                    {makeButtons()}
-                  </div>
-              </div>
-            </div>
-          </div>
+      <div className="card mural-view-card">
+        <img className="card-img-top big-mural" src={mural.image} alt={mural.title} onClick={this.zoomInEvent} />
+        <div className="card-body">
+          <h2 className="card-title">{mural.title}</h2>
+          <h5 clclassNameass="card-text">{mural.address}</h5>
+          {writeArtist()}
+          {makeButtons()}
         </div>
       </div>
     );
