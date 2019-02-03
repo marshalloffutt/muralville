@@ -19,9 +19,9 @@ const getAllFavorites = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-const addFavoriteAxios = favoriteId => axios.delete(`${firebaseUrl}/favorites/${favoriteId}.json`);
+const deleteFavoriteAxios = favoriteId => axios.delete(`${firebaseUrl}/favorites/${favoriteId}.json`);
 
-const deleteFavoriteAxios = newFavorite => axios.post(`${firebaseUrl}/favorites.json`, newFavorite);
+const addFavoriteAxios = newFavorite => axios.post(`${firebaseUrl}/favorites.json`, newFavorite);
 
 export default {
   getAllFavorites,
