@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import muralShape from '../../helpers/props/muralShape';
 import authRequests from '../../helpers/data/authRequests';
+import favoriteRequests from '../../helpers/data/favoriteRequests';
 import './MuralCard.scss';
 
 class MuralCard extends React.Component {
@@ -29,12 +30,19 @@ class MuralCard extends React.Component {
     addFavorite(newFavorite);
   }
 
-  unFavoriteEvent = (e) => {
+  unFavoriteEvent = e => new Promise((resolve, reject) => {
     e.preventDefault();
+    const uid = authRequests.getCurrentUid();
     const muralId = e.target.id;
     const { unFavorite } = this.props;
-    // unFavorite(favoriteId);
-  }
+    favoriteRequests.getAllFavorites()
+      .then((favorites) => {
+        const faveToDelete = favorites.find(favorite => favorite.muralId === muralId && favorite.uid === uid);
+        resolve(faveToDelete);
+        unFavorite(faveToDelete.id);
+      })
+      .catch(err => reject(err));
+  })
 
   makeStars = () => {
     const { mural } = this.props;
