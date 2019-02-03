@@ -12,7 +12,7 @@ Current production build: [link](https://muralville.firebaseapp.com/home)
 ## Screenshots
 
 ![loginview](src/images/screenshot1.png)
-![homeview](src/images/screenshot2.png)
+![homeview](src/images/screenshot4.png)
 ![muralview](src/images/screenshot3.png)
 ![editview](src/images/screenshot-3.png)
 
