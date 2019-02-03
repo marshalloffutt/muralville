@@ -11,6 +11,7 @@ import MuralView from '../../MuralView/MuralView';
 import './Home.scss';
 import authRequests from '../../../helpers/data/authRequests';
 import smashRequests from '../../../helpers/data/smashRequests';
+import favoriteRequests from '../../../helpers/data/favoriteRequests';
 
 class Home extends React.Component {
   state = {
@@ -54,6 +55,22 @@ class Home extends React.Component {
       selectedX: selectedMural.x,
       selectedY: selectedMural.y,
     });
+  }
+
+  addFavorite = (newFavorite) => {
+    favoriteRequests.addFavoriteAxios(newFavorite)
+      .then(() => {
+        this.getAndDisplayMurals();
+      })
+      .catch(err => console.error('error in adding favorite', err));
+  }
+
+  unFavorite = (favoriteId) => {
+    favoriteRequests.deleteFavoriteAxios(favoriteId)
+      .then(() => {
+        this.getAndDisplayMurals();
+      })
+      .catch(err => console.error('error in deleting favorite', err));
   }
 
   deleteMural = (muralId) => {
@@ -129,6 +146,8 @@ class Home extends React.Component {
                 />;
       } return <MuralsList
           murals={murals}
+          addFavorite={this.addFavorite}
+          unFavorite={this.unFavorite}
           initializeSingleCardView={this.initializeSingleCardView}
         />;
     };

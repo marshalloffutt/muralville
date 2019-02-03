@@ -14,6 +14,8 @@ class MuralsList extends React.Component {
     const {
       murals,
       initializeSingleCardView,
+      addFavorite,
+      unFavorite,
     } = this.props;
 
     const muralsItemComponents = murals
@@ -30,6 +32,8 @@ class MuralsList extends React.Component {
           murals={murals}
           key={mural.id}
           initializeSingleCardView={initializeSingleCardView}
+          addFavorite={addFavorite}
+          unFavorite={unFavorite}
         />
       ));
     return (
