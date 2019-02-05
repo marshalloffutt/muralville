@@ -2,9 +2,12 @@ import React from 'react';
 import {
   Button, Modal, ModalHeader, ModalBody,
 } from 'reactstrap';
+import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import geoRequests from '../../helpers/data/geoRequests';
+import bingRequests from '../../helpers/data/bingRequests';
 import './AddMuralModal.scss';
 
 const defaultMural = {
@@ -27,6 +30,8 @@ class AddMuralModal extends React.Component {
     this.state = {
       modal: false,
       newMural: defaultMural,
+      isLoading: false,
+      suggestResults: [],
     };
 
     this.toggle = this.toggle.bind(this);
@@ -39,6 +44,13 @@ class AddMuralModal extends React.Component {
     this.setState({ newMural: tempMural });
   }
 
+  addressFieldStringState = (name, selected) => {
+    const address = selected[0];
+    const tempMural = { ...this.state.newMural };
+    tempMural[name] = address;
+    this.setState({ newMural: tempMural });
+  }
+
   toggle() {
     this.setState({
       modal: !this.state.modal,
@@ -48,7 +60,7 @@ class AddMuralModal extends React.Component {
 
   titleChange = e => this.formFieldStringState('title', e);
 
-  addressChange = e => this.formFieldStringState('address', e);
+  addressChange = selected => this.addressFieldStringState('address', selected);
 
   artistChange = e => this.formFieldStringState('artist', e);
 
@@ -71,8 +83,21 @@ class AddMuralModal extends React.Component {
     this.setState({ newMural: defaultMural });
   });
 
+  typeAheadEvent = (e) => {
+    this.setState({ isLoading: true });
+    const query = e;
+    bingRequests.getSuggestion(query)
+      .then((results) => {
+        this.setState({
+          isLoading: false,
+          suggestResults: results[0],
+        });
+      })
+      .catch(error => console.error('Error in getting suggestions', error));
+  }
+
   render() {
-    const { newMural } = this.state;
+    const { newMural, isLoading, suggestResults } = this.state;
     return (
       <div>
         <Button color="danger" className="add-button" onClick={this.toggle}>{this.props.buttonLabel}</Button>
@@ -93,15 +118,21 @@ class AddMuralModal extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="address">Address:</label>
-                <input
-                  type="text"
-                  className="form-control"
+                <label className="typeahead-label" htmlFor="address">Address:</label>
+                <AsyncTypeahead
+                  className="form-input"
+                  ref={(typeahead) => {
+                    this.typeahead = typeahead;
+                  }}
                   id="address"
-                  aria-describedby="addressHelp"
                   placeholder="500 Interstate Blvd, Nashville, TN"
+                  options={suggestResults}
+                  isLoading={isLoading}
+                  onSearch={this.typeAheadEvent}
+                  onChange={(selected) => {
+                    this.addressChange(selected);
+                  }}
                   value={newMural.address}
-                  onChange={this.addressChange}
                 />
               </div>
               <div className="form-group">
