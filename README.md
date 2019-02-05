@@ -4,7 +4,7 @@ Muralville is my front end capstone project at NSS. It is a Nashville-centric co
 
 Users can sign in via Google authentication, and then use the interface to look through all the different murals that have been added to the database. User can also add new murals, and edit or delete previous murals that they have added.
 
-Muralville uses the Leaflet API, in conjunction with Esri provider for geosearch capabilities.
+Muralville uses the Leaflet API, in conjunction with Esri and Bing Maps for geosearch capabilities, and autosuggest.
 
 Current deployed build: [link](https://muralville.firebaseapp.com)
 
