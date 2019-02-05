@@ -125,20 +125,11 @@
     "image": "https://static-21.sinclairstoryline.com/resources/media/f31d4e3f-3e7b-4449-9360-1f8cd47cfbe0-large16x9_indnessis.jpg?1527791069456",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
   },
-  "mural015": {
-    "title": "Hillsboro Village Dragon",
-    "address": "1801 21st Avenue South, Nashville, TN",
-    "x": -86.790041,
-    "y": 36.136486854290474,
-    "artist": "Andee Rudloff",
-    "image": "https://news.vanderbilt.edu/files/Repainted_dragon_mural.jpg",
-    "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
-  },
   "mural016": {
     "title": "12 South Yoga",
     "address": "2814 12th Ave S, Nashville, TN",
-    "x": -86.79688671809227,
-    "y": 36.122385,
+    "x": -86.790030,
+    "y": 36.121950,
     "artist": "Mobe Oner",
     "image": "https://github.com/marshalloffutt/muralville/blob/master/src/photos/12syoga.jpeg?raw=true",
     "uid": "abaub3sW7ZNCAQaj9knECz4DAL43"
