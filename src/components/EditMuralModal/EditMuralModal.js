@@ -2,12 +2,9 @@ import React from 'react';
 import {
   Button, Modal, ModalHeader, ModalBody,
 } from 'reactstrap';
-import { AsyncTypeahead } from 'react-bootstrap-typeahead';
-import 'react-bootstrap-typeahead/css/Typeahead.css';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import geoRequests from '../../helpers/data/geoRequests';
-import bingRequests from '../../helpers/data/bingRequests';
 import './EditMuralModal.scss';
 
 const defaultMural = {
