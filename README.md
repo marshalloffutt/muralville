@@ -49,7 +49,7 @@ Note: To run this app you will need a firebase account and a new project.
 6. Create a realtime databse in Firebase, and start in test mode.
 
 ### 2. Configure Bing Maps
-1. Sign up for a key at (Bing Maps dev center)[https://www.bingmapsportal.com/]
+1. Sign up for a key at [Bing Maps dev center](https://www.bingmapsportal.com/)
 2. Once assigned a key, copy the key and api endpoint from the Bing Maps portal into the apiKeys.json file.
 
 ### 3. Serve up the app
