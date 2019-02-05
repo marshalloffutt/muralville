@@ -11,16 +11,16 @@ Current deployed build: [link](https://muralville.firebaseapp.com)
 
 ## Screenshots
 
-Authentication view
+### Authentication view
 ![loginview](src/images/screenshot1.png)
 
-Home view
+### Home view
 ![homeview](src/images/screenshot4.png)
 
-Individual mural view
+### Individual mural view
 ![muralview](src/images/screenshot3.png)
 
-Modal to add/edit
+### Modal to add/edit
 ![editview](src/images/screenshot-3.png)
 
 ## Technologies Used
@@ -29,10 +29,13 @@ Modal to add/edit
 * Axios
 * Create-React-App
 * Reactstrap
+* Bootstrap
 * Prop-Types
 * Leaflet
 * React-Leaflet
 * Leaflet-Geosearch
+* Bing Maps
+* React-Bootstrap-Autosuggest
 
 ## How to run this app
 Note: To run this app you will need a firebase account and a new project.
@@ -45,7 +48,11 @@ Note: To run this app you will need a firebase account and a new project.
 5. Navigate to your config object, and copy the keys from Firebase into the apiKeys.json file.
 6. Create a realtime databse in Firebase, and start in test mode.
 
-### 2. Serve up the app
+### 2. Configure Bing Maps
+1. Sign up for a key at (Bing Maps dev center)[https://www.bingmapsportal.com/]
+2. Once assigned a key, copy the key and api endpoint from the Bing Maps portal into the apiKeys.json file.
+
+### 3. Serve up the app
 #### `npm start`
 
 Runs the app in the development mode.<br>
