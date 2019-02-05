@@ -7,13 +7,20 @@ Users can sign in via Google authentication, and then use the interface to look 
 
 Muralville uses the Leaflet API, in conjunction with Esri provider for geosearch capabilities.
 
-Current production build: [link](https://muralville.firebaseapp.com/home)
+Current deployed build: [link](https://muralville.firebaseapp.com)
 
 ## Screenshots
 
+Authentication view
 ![loginview](src/images/screenshot1.png)
+
+Home view
 ![homeview](src/images/screenshot4.png)
+
+Individual mural view
 ![muralview](src/images/screenshot3.png)
+
+Modal to add/edit
 ![editview](src/images/screenshot-3.png)
 
 ## Technologies Used
