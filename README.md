@@ -47,8 +47,8 @@ Note: To run this app you will need a firebase account and a new project.
 4. In Firebase, create a new project.
 5. Navigate to your config object, and copy the keys from Firebase into the apiKeys.json file.
 6. Create a realtime database in Firebase, and start in test mode.
-7. Navigate to the Data tab inside the realtime database, and import `!base.json`. You should now see sets of data titled Murals, Users, and Favorites.
-8. Click on Murals, and the import the `murals.json` file. Repeat for Users, and Favorites.
+7. Navigate to the Data tab inside the realtime database, and import !base.json. You should now see sets of data titled Murals, Users, and Favorites.
+8. Click on Murals, and the import the murals.json file. Repeat for Users, and Favorites.
 9. Navigate to the Rules tab, and add the following rule:
 ```
     "users": {
