@@ -1,6 +1,5 @@
 # Muralville
 
-## Description
 Muralville is my front end capstone project at NSS. It is a Nashville-centric community-based mural finder app & collaboration project that uses the React, Sass styling, and Leaflet as a map component.
 
 Users can sign in via Google authentication, and then use the interface to look through all the different murals that have been added to the database. User can also add new murals, and edit or delete previous murals that they have added.
@@ -36,6 +35,7 @@ Current deployed build: [link](https://muralville.firebaseapp.com)
 * Leaflet-Geosearch
 * Bing Maps
 * React-Bootstrap-Autosuggest
+* Font Awesome
 
 ## How to run this app
 Note: To run this app you will need a firebase account and a new project.
