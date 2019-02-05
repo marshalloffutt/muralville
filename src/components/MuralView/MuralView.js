@@ -78,7 +78,7 @@ class MuralView extends React.Component {
         <img className="card-img-top big-mural" src={mural.image} alt={mural.title} onClick={this.zoomInEvent} />
         <div className="card-body">
           <h2 className="card-title">{mural.title}</h2>
-          <h5 clclassNameass="card-text">{mural.address}</h5>
+          <h5 className="card-text">{mural.address}</h5>
           {writeArtist()}
           {makeButtons()}
         </div>
