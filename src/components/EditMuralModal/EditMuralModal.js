@@ -99,6 +99,7 @@ class EditMuralModal extends React.Component {
                 <label htmlFor="title">Title:</label>
                 <input
                   type="text"
+                  maxlength="19"
                   contentEditable="true"
                   className="form-control"
                   id="title"
