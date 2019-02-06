@@ -17,8 +17,12 @@ class MuralView extends React.Component {
   deleteEvent = (e) => {
     e.preventDefault();
     const muralId = this.props.selected;
-    const { deleteMural } = this.props;
+    const { deleteMural, flyToLocation } = this.props;
+    const selectedY = 36.1627;
+    const selectedX = -86.7816;
+    const zoom = 13;
     deleteMural(muralId);
+    flyToLocation(selectedX, selectedY, zoom);
   }
 
   goBack = (e) => {
