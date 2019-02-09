@@ -4,6 +4,7 @@ import muralShape from '../../helpers/props/muralShape';
 import authRequests from '../../helpers/data/authRequests';
 import favoriteRequests from '../../helpers/data/favoriteRequests';
 import './MuralCard.scss';
+import tempMural from '../../images/temp_mural.png';
 
 class MuralCard extends React.Component {
   static propTypes = {
@@ -44,22 +45,28 @@ class MuralCard extends React.Component {
       .catch(err => reject(err));
   })
 
-  makeStars = () => {
-    const { mural } = this.props;
-    if (mural.isFavorite === true) {
-      return <i id={mural.id} className="fas fa-star fa-2x card-img-button-favorite" onClick={this.unFavoriteEvent}></i>;
-    } return <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteEvent}></i>;
-  }
-
   render() {
     const { mural } = this.props;
+
+    const writePhotos = () => {
+      if (mural.image === '') {
+        return <img className="card-img-top" src={tempMural} alt={mural.title}/>;
+      } return <img className="card-img-top" src={mural.image} alt={mural.title} />;
+    };
+
+    const makeStars = () => {
+      if (mural.isFavorite === true) {
+        return <i id={mural.id} className="fas fa-star fa-2x card-img-button-favorite" onClick={this.unFavoriteEvent}></i>;
+      } return <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteEvent}></i>;
+    };
+
     return (
       <div className="parent-div p-0 m-0">
-        {this.makeStars()}
+        {makeStars()}
         <div className="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
           <div className="card mural-card">
             <div className="pt-3 pl-3 pr-3">
-                <img className="card-img-top" src={mural.image} alt={mural.title}/>
+                {writePhotos()}
                 <h3 className="card-title mural-card-title mt-1">{mural.title}</h3>
             </div>
           </div>

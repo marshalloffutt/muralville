@@ -4,6 +4,7 @@ import EditMuralModal from '../EditMuralModal/EditMuralModal';
 import authRequests from '../../helpers/data/authRequests';
 import './MuralView.scss';
 import muralShape from '../../helpers/props/muralShape';
+import tempMural from '../../images/temp_mural.png';
 
 class MuralView extends React.Component {
   static propTypes = {
@@ -54,7 +55,7 @@ class MuralView extends React.Component {
     const makeButtons = () => {
       if (mural.uid === uid) {
         return (
-          <div className="container p-3">
+          <div className="container buttons d-flex p-3">
             <EditMuralModal
               buttonLabel = "Edit"
               onSubmit={this.props.onSubmit}
@@ -77,9 +78,19 @@ class MuralView extends React.Component {
       } return '';
     };
 
+    const writePhoto = () => {
+      if (mural.image !== '') {
+        return (
+          <img className="card-img-top big-mural" src={mural.image} alt={mural.title} onClick={this.zoomInEvent} />
+        );
+      } return (
+        <img className="card-img-top big-mural" src={tempMural} alt={mural.title} onClick={this.zoomInEvent} />
+      );
+    };
+
     return (
       <div className="card mural-view-card">
-        <img className="card-img-top big-mural" src={mural.image} alt={mural.title} onClick={this.zoomInEvent} />
+        {writePhoto()}
         <div className="card-body">
           <h2 className="card-title">{mural.title}</h2>
           <h5 className="card-text">{mural.address}</h5>
