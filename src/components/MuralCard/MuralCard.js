@@ -4,11 +4,16 @@ import muralShape from '../../helpers/props/muralShape';
 import authRequests from '../../helpers/data/authRequests';
 import favoriteRequests from '../../helpers/data/favoriteRequests';
 import './MuralCard.scss';
+import tempMural from '../../images/temp_mural.png';
 
 class MuralCard extends React.Component {
   static propTypes = {
     mural: muralShape,
     initializeSingleCardView: PropTypes.func,
+  }
+
+  addDefaultSrc = (e) => {
+    e.target.src = { tempMural };
   }
 
   clickedCard = (e) => {
@@ -51,6 +56,13 @@ class MuralCard extends React.Component {
     } return <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteEvent}></i>;
   }
 
+  writePhotos = () => {
+    const { mural } = this.props;
+    if (mural.image === '') {
+      return <img className="card-img-top" src={tempMural} alt={mural.title}/>;
+    } return <img className="card-img-top" src={mural.image} alt={mural.title} />;
+  }
+
   render() {
     const { mural } = this.props;
     return (
@@ -59,7 +71,7 @@ class MuralCard extends React.Component {
         <div className="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
           <div className="card mural-card">
             <div className="pt-3 pl-3 pr-3">
-                <img className="card-img-top" src={mural.image} alt={mural.title}/>
+                {this.writePhotos()}
                 <h3 className="card-title mural-card-title mt-1">{mural.title}</h3>
             </div>
           </div>
