@@ -24,6 +24,11 @@
   }
 }
 
+.buttons {
+  display: inline-block;
+  justify-content: center;
+}
+
 .go-back-button {
   background-color: $teal;
   border-color: $blue;

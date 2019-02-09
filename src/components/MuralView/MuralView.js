@@ -54,7 +54,7 @@ class MuralView extends React.Component {
     const makeButtons = () => {
       if (mural.uid === uid) {
         return (
-          <div className="container p-3">
+          <div className="container buttons d-flex p-3">
             <EditMuralModal
               buttonLabel = "Edit"
               onSubmit={this.props.onSubmit}
