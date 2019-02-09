@@ -12,10 +12,6 @@ class MuralCard extends React.Component {
     initializeSingleCardView: PropTypes.func,
   }
 
-  addDefaultSrc = (e) => {
-    e.target.src = { tempMural };
-  }
-
   clickedCard = (e) => {
     e.preventDefault();
     const muralId = e.target.closest('.mural-item').id;
@@ -49,29 +45,28 @@ class MuralCard extends React.Component {
       .catch(err => reject(err));
   })
 
-  makeStars = () => {
-    const { mural } = this.props;
-    if (mural.isFavorite === true) {
-      return <i id={mural.id} className="fas fa-star fa-2x card-img-button-favorite" onClick={this.unFavoriteEvent}></i>;
-    } return <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteEvent}></i>;
-  }
-
-  writePhotos = () => {
-    const { mural } = this.props;
-    if (mural.image === '') {
-      return <img className="card-img-top" src={tempMural} alt={mural.title}/>;
-    } return <img className="card-img-top" src={mural.image} alt={mural.title} />;
-  }
-
   render() {
     const { mural } = this.props;
+
+    const writePhotos = () => {
+      if (mural.image === '') {
+        return <img className="card-img-top" src={tempMural} alt={mural.title}/>;
+      } return <img className="card-img-top" src={mural.image} alt={mural.title} />;
+    };
+
+    const makeStars = () => {
+      if (mural.isFavorite === true) {
+        return <i id={mural.id} className="fas fa-star fa-2x card-img-button-favorite" onClick={this.unFavoriteEvent}></i>;
+      } return <i id={mural.id} className="fas fa-star fa-2x card-img-button" onClick={this.favoriteEvent}></i>;
+    };
+
     return (
       <div className="parent-div p-0 m-0">
-        {this.makeStars()}
+        {makeStars()}
         <div className="m-4 mural-item" id={mural.id} onClick={this.clickedCard}>
           <div className="card mural-card">
             <div className="pt-3 pl-3 pr-3">
-                {this.writePhotos()}
+                {writePhotos()}
                 <h3 className="card-title mural-card-title mt-1">{mural.title}</h3>
             </div>
           </div>
