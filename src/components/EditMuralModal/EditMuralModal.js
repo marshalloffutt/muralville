@@ -104,7 +104,6 @@ class EditMuralModal extends React.Component {
                   className="form-control"
                   id="title"
                   aria-describedby="titleHelp"
-                  placeholder="Mural Title"
                   value={newMural.title}
                   onChange={this.titleChange}
                 />
@@ -116,7 +115,6 @@ class EditMuralModal extends React.Component {
                   className="form-control"
                   id="address"
                   aria-describedby="addressHelp"
-                  placeholder="500 Interstate Blvd, Nashville, TN"
                   value={newMural.address}
                   onChange={this.addressChange}
                 />
@@ -128,7 +126,6 @@ class EditMuralModal extends React.Component {
                   className="form-control"
                   id="artist"
                   aria-describedby="artistHelp"
-                  placeholder="Picasso"
                   value={newMural.artist}
                   onChange={this.artistChange}
                 />
@@ -140,7 +137,6 @@ class EditMuralModal extends React.Component {
                   className="form-control"
                   id="image"
                   aria-describedby="imageHelp"
-                  placeholder="https://github.com/marshalloffutt/muralville/blob/master/src/images/temp_mural.png"
                   value={newMural.image}
                   onChange={this.imageChange}
                 />
