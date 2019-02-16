@@ -113,7 +113,6 @@ class AddMuralModal extends React.Component {
                   className="form-control"
                   id="title"
                   aria-describedby="titleHelp"
-                  placeholder="Mural Title"
                   value={newMural.title}
                   onChange={this.titleChange}
                 />
@@ -126,7 +125,6 @@ class AddMuralModal extends React.Component {
                     this.typeahead = typeahead;
                   }}
                   id="address"
-                  placeholder="500 Interstate Blvd, Nashville, TN"
                   options={suggestResults}
                   isLoading={isLoading}
                   onSearch={this.typeAheadEvent}
@@ -143,7 +141,6 @@ class AddMuralModal extends React.Component {
                   className="form-control"
                   id="artist"
                   aria-describedby="artistHelp"
-                  placeholder="Picasso"
                   value={newMural.artist}
                   onChange={this.artistChange}
                 />
@@ -155,7 +152,6 @@ class AddMuralModal extends React.Component {
                   className="form-control"
                   id="image"
                   aria-describedby="imageHelp"
-                  placeholder="https://github.com/marshalloffutt/muralville/blob/master/src/images/temp_mural.png"
                   value={newMural.image}
                   onChange={this.imageChange}
                 />
